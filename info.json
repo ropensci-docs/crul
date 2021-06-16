@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "43398df4768424b2c84ed99cbef518379691fba5",
+    "author": "Scott Chamberlain <sckott@fastmail.com>",
+    "time": "2021-06-16 23:36:14",
+    "files": 1,
+    "merge": false,
+    "message": "#156 more tests for AsyncQueue for parse, status_code, status, content, and times\n"
+  },
+  "remote": "https://github.com/ropensci/crul",
+  "pkg": "crul"
+}
