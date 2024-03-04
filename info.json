@@ -1,0 +1,12 @@
+{
+  "commit": {
+    "commit": "bcc136f8955575ac51f7e6c0cae13f653dbcdbf6",
+    "author": "Enrico Spinielli <enrico.spinielli@gmail.com>",
+    "time": "2023-08-22 13:43:31",
+    "files": 1,
+    "merge": false,
+    "message": "generated docs\n"
+  },
+  "repo": "https://github.com/ropensci/crul",
+  "pkg": "crul"
+}
