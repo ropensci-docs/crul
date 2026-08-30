@@ -1,0 +1,14 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  async: async.html
+  best-practices-api-packages: best-practices-api-packages.html
+  choosing-a-client: choosing-a-client.html
+  crul: crul.html
+  curl-options: curl-options.html
+  how-to-use-crul: how-to-use-crul.html
+last_built: 2026-08-30T07:37Z
+urls:
+  reference: https://docs.ropensci.org/crul/reference
+  article: https://docs.ropensci.org/crul/articles

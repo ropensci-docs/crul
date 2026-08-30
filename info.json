@@ -1,0 +1,13 @@
+{
+  "commit": {
+    "commit": "6e4ee16daaff28d842044bff979cf3dcd26263ae",
+    "author": "Scott Chamberlain <sckott@fastmail.com>",
+    "time": "2025-07-23T21:24:19Z",
+    "files": 2,
+    "merge": false,
+    "message": "Increment version number to 1.6.0.9000\n"
+  },
+  "repo": "https://github.com/ropensci/crul",
+  "pkg": "crul",
+  "time": "2026-08-30T07:37:39Z"
+}
