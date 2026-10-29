@@ -1,0 +1,220 @@
+# crul
+
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![R-check](https://github.com/ropensci/crul/workflows/R-check/badge.svg)](https://github.com/ropensci/crul/actions/)
+[![codecov](https://codecov.io/gh/ropensci/crul/graph/badge.svg?token=q7rQCfvbsy)](https://app.codecov.io/gh/ropensci/crul)
+[![cran
+checks](https://badges.cranchecks.info/worst/crul.svg)](https://CRAN.R-project.org/package=crul)
+[![rstudio mirror
+downloads](https://cranlogs.r-pkg.org/badges/crul)](https://github.com/r-hub/cranlogs.app)
+[![cran
+version](https://www.r-pkg.org/badges/version/crul)](https://cran.r-project.org/package=crul)
+
+An HTTP client, taking inspiration from Ruby’s
+[faraday](https://rubygems.org/gems/faraday) and Python’s `requests`
+
+Package documentation: <https://docs.ropensci.org/crul/>
+
+Some Features:
+
+- `HttpClient` - Main interface to making HTTP requests. Synchronous
+  requests only.
+- `HttpResponse` - HTTP response object, used for all responses across
+  the different clients.
+- `Paginator` - Auto-paginate through requests - supports a subset of
+  all possible pagination scenarios - will fill out more scenarios soon
+- `Async` - Asynchronous HTTP requests - a simple interface for many
+  URLS - whose interface is similar to `HttpClient` - all URLs are
+  treated the same.
+- `AsyncVaried` - Asynchronous HTTP requests - accepts any number of
+  `HttpRequest` objects - with a different interface than
+  `HttpClient`/`Async` due to the nature of handling requests with
+  different HTTP methods, options, etc.
+- set curl options globally:
+  [`set_auth()`](https://docs.ropensci.org/crul/reference/crul-options.md),
+  [`set_headers()`](https://docs.ropensci.org/crul/reference/crul-options.md),
+  and more
+- Writing to disk and streaming: available with both synchronous
+  requests as well as async requests
+- Hooks on requests and responses are available in the `HttpClient`
+  method only, and allow you to trigger functions to run on requests or
+  responses, or both. See
+  [`?hooks`](https://docs.ropensci.org/crul/reference/hooks.md) for the
+  details and examples
+- Mocking: `crul` integrates with
+  [webmockr](https://github.com/ropensci/webmockr) to mock HTTP
+  requests. Checkout the [http testing
+  book](https://books.ropensci.org/http-testing/)
+- Test caching: `crul` also integrates with
+  [vcr](https://github.com/ropensci/vcr) to cache http
+  requests/responses. Checkout the [http testing
+  book](https://books.ropensci.org/http-testing/)
+
+## Installation
+
+CRAN version
+
+``` r
+
+install.packages("crul")
+```
+
+Latest binaries from rOpenSci
+
+``` r
+
+install.packages("crul", repos = "https://dev.ropensci.org")
+```
+
+Dev version from GitHub
+
+``` r
+
+install.packages("pak")
+pak::pak("ropensci/crul")
+```
+
+``` r
+
+library("crul")
+```
+
+## Meta
+
+- Please [report any issues or
+  bugs](https://github.com/ropensci/crul/issues).
+- License: MIT
+- Get citation information for `crul` in R doing
+  `citation(package = 'crul')`
+- Please note that this package is released with a [Contributor Code of
+  Conduct](https://ropensci.org/code-of-conduct/). By contributing to
+  this project, you agree to abide by its terms.
+- Where does the package name come from? It was a play on “curl”, the
+  popular command line client.
+- Where does the sticker design come from? The sticker idea [arose from
+  a tweet](https://github.com/ropensci/crul/issues/42) - crul is close
+  (ish) to Krull, a 1980’s movie with a “mystical five-pointed weapon”.
+  The association with Krull was not known before naming the package.
+
+# Package index
+
+## crul
+
+High level overview of package
+
+- [`crul`](https://docs.ropensci.org/crul/reference/crul-package.md)
+  [`crul-package`](https://docs.ropensci.org/crul/reference/crul-package.md)
+  : crul: HTTP Client
+
+## HTTP Verbs
+
+- [`verb-DELETE`](https://docs.ropensci.org/crul/reference/verb-DELETE.md)
+  : HTTP verb info: DELETE
+- [`verb-GET`](https://docs.ropensci.org/crul/reference/verb-GET.md) :
+  HTTP verb info: GET
+- [`verb-HEAD`](https://docs.ropensci.org/crul/reference/verb-HEAD.md) :
+  HTTP verb info: HEAD
+- [`verb-PATCH`](https://docs.ropensci.org/crul/reference/verb-PATCH.md)
+  : HTTP verb info: PATCH
+- [`verb-POST`](https://docs.ropensci.org/crul/reference/verb-POST.md) :
+  HTTP verb info: POST
+- [`verb-PUT`](https://docs.ropensci.org/crul/reference/verb-PUT.md) :
+  HTTP verb info: PUT
+- [`writing-options`](https://docs.ropensci.org/crul/reference/writing-options.md)
+  : Writing data options
+
+## Main HTTP class
+
+- [`HttpClient`](https://docs.ropensci.org/crul/reference/HttpClient.md)
+  : HTTP client
+
+## Pagination
+
+- [`Paginator`](https://docs.ropensci.org/crul/reference/Paginator.md) :
+  Paginator client
+
+## Request configuration
+
+- [`handle()`](https://docs.ropensci.org/crul/reference/handle.md) :
+  Make a handle
+- [`auth()`](https://docs.ropensci.org/crul/reference/auth.md) :
+  Authentication
+- [`cookies`](https://docs.ropensci.org/crul/reference/cookies.md) :
+  Working with cookies
+- [`hooks`](https://docs.ropensci.org/crul/reference/hooks.md) : Event
+  Hooks
+- [`http-headers`](https://docs.ropensci.org/crul/reference/http-headers.md)
+  : Working with HTTP headers
+- [`progress`](https://docs.ropensci.org/crul/reference/progress.md) :
+  progress bars
+- [`proxy()`](https://docs.ropensci.org/crul/reference/proxies.md) :
+  proxy options
+- [`upload()`](https://docs.ropensci.org/crul/reference/upload.md) :
+  upload file
+
+## Async
+
+- [`Async`](https://docs.ropensci.org/crul/reference/Async.md) : Simple
+  async client
+- [`AsyncQueue`](https://docs.ropensci.org/crul/reference/AsyncQueue.md)
+  : AsyncQueue
+- [`AsyncVaried`](https://docs.ropensci.org/crul/reference/AsyncVaried.md)
+  : Async client for different request types
+- [`HttpRequest`](https://docs.ropensci.org/crul/reference/HttpRequest.md)
+  : HTTP request object
+
+## Request debugging/inspection
+
+- [`curl_verbose()`](https://docs.ropensci.org/crul/reference/curl_verbose.md)
+  : curl verbose method
+- [`set_opts()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  [`set_verbose()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  [`set_proxy()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  [`set_auth()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  [`set_headers()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  [`crul_settings()`](https://docs.ropensci.org/crul/reference/crul-options.md)
+  : Set curl options, proxy, and basic auth
+- [`curl-options`](https://docs.ropensci.org/crul/reference/curl-options.md)
+  [`user-agent`](https://docs.ropensci.org/crul/reference/curl-options.md)
+  [`verbose`](https://docs.ropensci.org/crul/reference/curl-options.md)
+  [`timeout`](https://docs.ropensci.org/crul/reference/curl-options.md)
+  : curl options
+
+## Check if a url is okay
+
+- [`ok()`](https://docs.ropensci.org/crul/reference/ok.md) : check if a
+  url is okay
+
+## HTTP responses
+
+- [`HttpResponse`](https://docs.ropensci.org/crul/reference/HttpResponse.md)
+  : Base HTTP response object
+- [`content-types`](https://docs.ropensci.org/crul/reference/content-types.md)
+  : Working with content types
+
+## Utilities
+
+- [`url_build()`](https://docs.ropensci.org/crul/reference/url_build.md)
+  [`url_parse()`](https://docs.ropensci.org/crul/reference/url_build.md)
+  : Build and parse URLs
+- [`mock()`](https://docs.ropensci.org/crul/reference/mock.md)
+  **\[deprecated\]** : Mocking HTTP requests
+
+# Articles
+
+### All vignettes
+
+- [3. async with
+  crul](https://docs.ropensci.org/crul/articles/async.md):
+- [5. API package best
+  practices](https://docs.ropensci.org/crul/articles/best-practices-api-packages.md):
+- [6. Choosing a HTTP request
+  class](https://docs.ropensci.org/crul/articles/choosing-a-client.md):
+- [1. crul
+  introduction](https://docs.ropensci.org/crul/articles/crul.md):
+- [4. curl
+  options](https://docs.ropensci.org/crul/articles/curl-options.md):
+- [2. crul
+  workflows](https://docs.ropensci.org/crul/articles/how-to-use-crul.md):
